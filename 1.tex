@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage{hyperref}
+\usepackage[]{microtype}
+\usepackage{amsthm}
+\usepackage{amsmath, amssymb}
+\theoremstyle{definition}
+\newtheorem{theorem}{{Theorem}}
+\newtheorem{lemma}{{Lemma}}
+\newtheorem{proposition}{{Proposition}}
+\newtheorem{definition}{{Definition}}
+\newtheorem{corollary}{{Corollary}}
+\newtheorem{example}{{Example}}
+\newtheorem{conjecture}{{Conjecture}}
+\newtheorem{remark}{{Remark}}
+\newtheorem{claim}{{Claim}}
+\newtheorem{exercise}{{Exercise}}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{bib.bib} %Import the bibliography file
+\begin{document}
+\author{Vincent Tran}
+\title{Proofs of the Exercises in Chapter 1}
+\maketitle
+
+\begin{exercise}
+	\begin{proof}
+	Let \(a,b,c,d,e,f\in\mathbb{Z} \) and \(x,y,z\in\mathbb{Z}/m \) such that \((b,m) = (d,m) = (f,m) = 1 \) and \(xb  \equiv a, yd\equiv c, zf \equiv e \pmod{m}\).
+	Then we can show that \(\frac{a}{b}+\frac{c}{d}=\frac{e}{f} \implies  x+y\equiv z\):
+	\begin{align*}
+		\frac{a}{b}+\frac{c}{d}=\frac{e}{f}\\
+		adf + cbf = ebd\\
+		xbdf + ybdf \equiv zbdf\\
+		x+y\equiv z
+	\end{align*}
+	Furthermore, if \(\frac{ac}{bd}= \frac{e}{f}\) for possibly different \(e,f \), then \(xy \equiv z \) for possible different \(z \):
+	\begin{align*}
+		\frac{ac}{bd}=\frac{e}{f}\\
+		acf = bed\\
+		xbydf \equiv bzfd\\
+		xy \equiv z
+	\end{align*}
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+	Consider the sequence \(\frac{1}{1},\frac{1}{2},\frac{1}{3}, \cdots \frac{1}{p-1} \). We can show that no two elements in this series are equivalent mod odd \(p \). FTOC suppose there are two integers \(a,b \) such that \(\frac{1}{a} \equiv\frac{1}{b}\), let this be equal to \(x \). Then \(ax \equiv 1 \equiv bx \). Since \(p \) is prime, all integers in \([1,p-1] \) are relatively prime to \(p \). Thus \(ax\equiv bx \implies a\equiv b \), which is impossible since \(a\ne b \)  and \(a + pk > p-1 \) for \(k\in\mathbb{N} \) as \(a \ge 1 \). Thus every fraction is uniquely equivalent to an element in \(\mathbb{Z}/p \).
+
+	Thus the sum of all the elements in this series is just \(1+2+3+4+\cdots +p-1 \) as every element of \(\mathbb{Z}/p \) must be in this series (there are \(p-1 \) elements in \(\mathbb{Z}/p \) and \(p-1 \) unique elements in the sequence). Thus the sum is just \((p-1)(p)/2 \equiv 0\).
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+		By the hypothesis, \(x^4 + y^4 = x^7y + 1 \equiv 0 \pmod{x^4+y^4}\). Thus \(y \equiv \frac{-1}{x^7}\implies x^4 + (\frac{-1}{x^7})^4 = \frac{x^{32} + 1}{x^{28}} \equiv 0 \implies x^{32} + 1 \equiv 0\).
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+
+	\end{proof}
+\end{exercise}
+
+\end{document}
