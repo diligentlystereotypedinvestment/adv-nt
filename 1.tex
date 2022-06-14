@@ -16,6 +16,8 @@
 \newtheorem{exercise}{{Exercise}}
 \usepackage{biblatex} %Imports biblatex package
 \addbibresource{bib.bib} %Import the bibliography file
+\newcommand{\ind}{\text{ind }}
+
 \begin{document}
 \author{Vincent Tran}
 \title{Proofs of the Exercises in Chapter 1}
@@ -57,7 +59,41 @@
 
 \begin{exercise}
 	\begin{proof}
+		Let \((a,m)=d \). Thus \(a=dk \) for some \(k\in\mathbb{Z} \) such that \((k,m) = 1 \). Thus we have it that \(dkx \equiv b \). Thus \(dkx = b + mj \) for some \(j\in\mathbb{Z} \). Since \(d\mid m \), \(d\mid b \). Then we can show that if \(d\mid b, \exists x \). We can show that \(x\equiv k^{-1}(e+fj) \) where \(ed=b \) and \(fd=m \) is a solution: \(ax \equiv dkk^{-1}(e+fj) \equiv de+dfj \equiv b + mj \equiv b \). Thus \(\exists x \) iff \(d|b \).
+	\end{proof}
+\end{exercise}
 
+\begin{exercise}
+	\begin{proof}
+		Let \(x = 3a + r_1 = 4b + r_2 = 5c + r_3\) for some \(a,b,c\in\mathbb{Z} \). Then \(3a + r_1 \equiv r_2 \pmod{4} \). Thus \(3a \equiv r_2 - r_1 \implies a \equiv 3r_2 - 3r_1 \equiv 3r_2 + r_1 \). Therefore \(a = 3r_2 + r_1 + 4d \) for some integer \(d \). Substituting into \(x \), we get \(x = 9r_2 + 3r_1 + 12d \). We can repeat this with \(x =  5c + r_3\) to get the result.
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+	The verify part is just back-of-the-napkin math, so I'll leave it out of this. Then we do some algebra:
+	\begin{align*}
+		10\ind 2 + 60\ind y \equiv 70\ind 14 \pmod{19}\\
+		1 + 6\ind y \equiv 7 \cdot 7\\
+		6\ind y \equiv 48\\
+		\ind y \equiv 8\\
+		y \equiv 9
+	\end{align*}
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+		\[
+			\ind y = [t_0, t_1, t_2] \implies \ind y^2 = [2t_0, 2t_1, 2t_2]
+		\]
+		Thus \(y^2 \equiv 2^{2t_2} \equiv 1 \pmod{3} \) and \(y^2 \equiv (-1)^{2t_0}5^{2t_1}  \equiv 1 \pmod{8}\). Thus \(y^2 \equiv 1 \).
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+		Let \(\ind y = [t_0, t_1, t_2, \cdots , t_s] \). Thus \(\ind y^4 = [4t_0, \cdots, 4t_s] \). For a non-trivial solution, \(4t_i \equiv 0 \pmod{\phi(p_i^{a_i})} \). Since \(t_i \) varies, the only way for this to occur is for \(\phi(p_i^{a_i})|4 \implies \phi(p_i^{a_i}) = 1,2,4 \). Testing small \(p_i \) and \(a_i \) reveals that this is only the case when \(p_i=3,5,4,8,16 \) (trivial to see that it can't be greater).
 	\end{proof}
 \end{exercise}
 
