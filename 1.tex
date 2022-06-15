@@ -93,7 +93,15 @@
 
 \begin{exercise}
 	\begin{proof}
-		Let \(\ind y = [t_0, t_1, t_2, \cdots , t_s] \). Thus \(\ind y^4 = [4t_0, \cdots, 4t_s] \). For a non-trivial solution, \(4t_i \equiv 0 \pmod{\phi(p_i^{a_i})} \). Since \(t_i \) varies, the only way for this to occur is for \(\phi(p_i^{a_i})|4 \implies \phi(p_i^{a_i}) = 1,2,4 \). Testing small \(p_i \) and \(a_i \) reveals that this is only the case when \(p_i=3,5,4,8,16 \) (trivial to see that it can't be greater).
+		Let \(\ind y = [t_0, t_1, t_2, \cdots , t_s] \). Thus \(\ind y^4 = [4t_0, \cdots, 4t_s] \). For a non-trivial solution, \(4t_i \equiv 0 \pmod{\phi(p_i^{a_i})} \). Since \(t_i \) varies, the only way for this to occur is for \(\phi(p_i^{a_i})|4 \implies \phi(p_i^{a_i}) = 1,2,4 \). This is only the case for \(p_i^{a_i}=3,5,4,8,16 \).
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+		Suppose there is a \(a_i\otimes a_s \in K_i \) and \(a_j\otimes a_r \in K_j \) such that \(a_i \otimes a_s = a_j\otimes a_r \). Then \(a_i = a_j \otimes a_r \otimes a_s^{-1} \). Thus \(K_i = \{a_j \otimes a_r \otimes a_s^{-1} \otimes a_1 \cdots  \). Since \(a_r, a_s, a_n \in K\) for \(n \in [1, t]\), \(a_r \otimes a_s^{-1} \otimes a_n \in K \). It is trivial to see that for all  \(n \), this product is unique. Thus every element of \(K_i \) is a unique product of \(a_j \) and an element of \(K \), thus making \(K_i =K_j \) if they share an element. Thus if they aren't equal, they share no elements.
+
+		Since \(\exists a_x \in G \forall a_n \in K: a_x \otimes a_n = a_y\) for \(a_y \in G \), every element of \(G \) is in some \(K_x \). Since the \(K_x \)'s  have a fixed size and are disjoint, \(t\mid h \) since otherwise, there would be a remainder to \(h/t \) that are elements not in a \(K_x \), which is impossible. Since they are disjoint, have size \(t \), and make up the entire set of \(G \), \(\frac{h}{t} \) must be the number of cosets there are.
 	\end{proof}
 \end{exercise}
 
