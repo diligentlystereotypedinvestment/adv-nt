@@ -17,6 +17,8 @@
 \usepackage{biblatex} %Imports biblatex package
 \addbibresource{bib.bib} %Import the bibliography file
 \newcommand{\ind}{\text{ind }}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
 
 \begin{document}
 \author{Vincent Tran}
@@ -102,6 +104,20 @@
 		Suppose there is a \(a_i\otimes a_s \in K_i \) and \(a_j\otimes a_r \in K_j \) such that \(a_i \otimes a_s = a_j\otimes a_r \). Then \(a_i = a_j \otimes a_r \otimes a_s^{-1} \). Thus \(K_i = \{a_j \otimes a_r \otimes a_s^{-1} \otimes a_1 \cdots  \). Since \(a_r, a_s, a_n \in K\) for \(n \in [1, t]\), \(a_r \otimes a_s^{-1} \otimes a_n \in K \). It is trivial to see that for all  \(n \), this product is unique. Thus every element of \(K_i \) is a unique product of \(a_j \) and an element of \(K \), thus making \(K_i =K_j \) if they share an element. Thus if they aren't equal, they share no elements.
 
 		Since \(\exists a_x \in G \forall a_n \in K: a_x \otimes a_n = a_y\) for \(a_y \in G \), every element of \(G \) is in some \(K_x \). Since the \(K_x \)'s  have a fixed size and are disjoint, \(t\mid h \) since otherwise, there would be a remainder to \(h/t \) that are elements not in a \(K_x \), which is impossible. Since they are disjoint, have size \(t \), and make up the entire set of \(G \), \(\frac{h}{t} \) must be the number of cosets there are.
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	\begin{lemma}
+		$P = \{b^a, a\in\N}$ forms a group under $\cdot$ where $b\in\Z/m\Z$.
+		\begin{proof}
+			First we can show closure. Suppose we have two elements of $P$, $b^a$ and $b^c$ for $a,b \in\N$. Then $b^a \cdot b^c = b^{a+c}$, and since $a+c \in\N, \, b^{a+c} \in P$ (note that adding the exponent rule works since when we multiply equivalence classes, we can pick any arbitrary element of the equivalence class. Thus we can simply pick $b^a$ each time, and do multiplication in the integers).
+
+			Then we can show there is an identity, which we claim is 1, through contradiction.
+		\end{proof}
+	\end{lemma}
+	\begin{proof}
+
 	\end{proof}
 \end{exercise}
 
