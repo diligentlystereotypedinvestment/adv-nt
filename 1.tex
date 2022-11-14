@@ -108,16 +108,36 @@
 \end{exercise}
 
 \begin{exercise}
-	\begin{lemma}
-		$P = \{b^a, a\in\N}$ forms a group under $\cdot$ where $b\in\Z/m\Z$.
+	\begin{lemma}\label{lemma:M(m)groupness}
+		$M(m) = \{b^a, a\in\N\}$ forms a group under $\cdot$ where $b\in\Z/m\Z$.
 		\begin{proof}
-			First we can show closure. Suppose we have two elements of $P$, $b^a$ and $b^c$ for $a,b \in\N$. Then $b^a \cdot b^c = b^{a+c}$, and since $a+c \in\N, \, b^{a+c} \in P$ (note that adding the exponent rule works since when we multiply equivalence classes, we can pick any arbitrary element of the equivalence class. Thus we can simply pick $b^a$ each time, and do multiplication in the integers).
+			First we can show closure. Suppose we have two elements of $M(m)$, $b^a$ and $b^c$ for $a,b \in\N$. Then $b^a \cdot b^c = b^{a+c}$, and since $a+c \in\N, \, b^{a+c} \in M(m)$ (note that adding the exponent rule works since when we multiply equivalence classes, we can pick any arbitrary element of the equivalence class. Thus we can simply pick $b^a$ each time, and do multiplication in the integers).
 
-			Then we can show there is an identity, which we claim is 1, through contradiction.
+			Then we can show there is the identity 1. Consider $M(m)' = \{b^a, a \in\N \bigcap [1,m+1]\} \subset M(m)$. Since $M(m)'$ has $m+1$ objects, and $\Z/m\Z$ has $m$ objects, $\exists a,c$ s.t. $b^a = b^c$ and $a\ne c$ by the Pidgeonhole Principle. WLOG, $c > a$. Thus $c-a \in \N$. But then, $b^{c-a} = b^c/b^a = 1 \in M(m)$ (subtracting exponents argument works by similar logic to adding them).
+
+			We can show every element to have an inverse. Fix $a\in\N$. By the above logic, find $c$ s.t. $b^a = b^c$ and $c>a$. As before, $b^{c-a} = 1$. We then break into 3 cases:
+			If $c-a = a$, then $c = 2a \implies b^a = b^{2a} \implies b^a = 1$. If $b^a=1$, it has an inverse, $1$. 
+			
+			If $c-a > a$, then $$c-2a \in \N \implies b^{c-2a} \in M(m)$, which is the inverse of $b^a$. 
+			
+			If $c-a < a$, then we can find a $n$ s.t. $n(c-a) > a$ by considering using the division algorithm to find $a = n(c-a) + r, r\in\N\bigcap[0,c-a)$. Then note that if $r=0$, then we can simply increment $n$ by 1 to see that $(n+1)(c-a) = n(c-a) + c-a = a + c - a = c > a$. Thus we found the inverse of $b^a$: $b^{(n+1)(c-a) -a} = \left(b^{c-a}\right)^{n+1} * b^{-a} = 1^{n+1} \cdot b^{-a} = b^{-a}$ (note that we can take an arbitrary element from $b$ and then do these operations in the rationals, and by equality both sides exist in \Z/m\Z, thus both sides are $b$). If $r > 0$, then by definition, $n(c-a) > a$. Then we have found an inverse: $b^{n(c-a)-a} = \left(b^{c-a}\right)^n \cdot b^{-a} = 1^n \cdot b^{-a} = b^{-a}$.
+			
+			We have associativity by the properties of $\cdot$ in $\Z/m\Z$.
+
+			Thus all group properties are met.
 		\end{proof}
 	\end{lemma}
 	\begin{proof}
+		Since $M(m)$ is a group by $\ref{lemma:M(m)groupness}$, by Lagrange's Lemma $|M(m)| \div |\Z/m\Z| \implies |M(m)| \div \phi(m)$.
 
+		Define the order of $b$ to be the smallest $a\in\N$ s.t. $b^a = 1$ and denote it as $\ord(b)$. We know that $a$ exists since $c-a \in\N$, $b^{c-a} = 1$, and by WOP. Define $P(n) := \{b^a, a\in \N \bigcap [1, n]\}$. 
+		%If $\exists a,c \in \N \bigcap[1,\ord(b)]$ s.t. $b^a = b^c$, then $c-a < \ord(b)$, but $b^{c-a} = 1$, contradicting the definition of order. 
+		
+		Then we can show that $P(\ord(b)) = M(m)$. Clearly $P(\ord(b)) \subset M(m)$. Then to show that $M(m) \subset P(\ord(b))$, fix $a$ s.t. $b^a \in M(m)$. Then find (using the division algorithm) $n \in \N, r\in\Z$ s.t. $a = n\ord(b) + r, 0 \le r < \ord(b)$. If $r=0$, then we can simply decrement $n$ by 1 and increase $r$ by $\ord(b)$. Thus $a = n\ord(b) + r, 0<r<\ord(b)$. Thus $b^a = \left(b^{\ord(b)}\right)^n \cdot b^r \in P(\ord(b))$. Thus $P(\ord(b)) = M(m)$.
+		
+		%FTSOC suppose $\ord(b) < |M(m)|$. If $\ord(b) > |M(m)|
+		
+		%Next we show that $b^{|M(m)|} = 1$. First define $P(n) := \{b^a, a\in \N \bigcap [1, n]\}$. We will now show that $P(|M(m)|) = M(m)$ by showing these ``first'' $|M(m)|$ elements to be distinct (if they are, then there won't be greater $a$ because the sizes would provide a contradiction). FTSOC suppose $\exists a,c \in [1,M(m)]$ s.t. $b^a = b^c$ and $c>a$ (WLOG). Then $b^{c-a} = 1$. But now given any $b^d$, we can reduce it to $b^r, r \le c-a$ with the division algorithm: $d = n'(c-a) + r', r' \in\N \bigcap[0,c-a)$, if $r'=0$ then decrement $n'$ by 1 to get $d = (n'-1) (c-a) + c-a$ and let this be $r$ and $n = n'-1, else let $r = r'$ and $n = n'. Then $b^{n(c-a) + r} = \left(b^{c-a}\right)^n \cdot b^r = b^r$. Therefore $|M(m)| < c-a < |M(m)|$, a contradiction. Thus all the elements of $P(|M(m)|)$ are distinct. Thus 
 	\end{proof}
 \end{exercise}
 
