@@ -133,12 +133,39 @@
 		Define the order of $b$ to be the smallest $a\in\N$ s.t. $b^a = 1$ and denote it as $\ord(b)$. We know that $a$ exists since $c-a \in\N$, $b^{c-a} = 1$, and by WOP. Define $P(n) := \{b^a, a\in \N \bigcap [1, n]\}$. 
 		%If $\exists a,c \in \N \bigcap[1,\ord(b)]$ s.t. $b^a = b^c$, then $c-a < \ord(b)$, but $b^{c-a} = 1$, contradicting the definition of order. 
 		
-		Then we can show that $P(\ord(b)) = M(m)$. Clearly $P(\ord(b)) \subset M(m)$. Then to show that $M(m) \subset P(\ord(b))$, fix $a$ s.t. $b^a \in M(m)$. Then find (using the division algorithm) $n \in \N, r\in\Z$ s.t. $a = n\ord(b) + r, 0 \le r < \ord(b)$. If $r=0$, then we can simply decrement $n$ by 1 and increase $r$ by $\ord(b)$. Thus $a = n\ord(b) + r, 0<r<\ord(b)$. Thus $b^a = \left(b^{\ord(b)}\right)^n \cdot b^r \in P(\ord(b))$. Thus $P(\ord(b)) = M(m)$.
+		Then we can show that $P(\ord(b)) = M(m)$. Clearly $P(\ord(b)) \subset M(m)$. Then to show that $M(m) \subset P(\ord(b))$, fix $a$ s.t. $b^a \in M(m)$. Then find (using the division algorithm) $n \in \N, r\in\Z$ s.t. $a = n\ord(b) + r, 0 \le r < \ord(b)$. If $r=0$, then we can simply decrement $n$ by 1 and increase $r$ by $\ord(b)$. Thus $a = n\ord(b) + r, 0<r<\ord(b)$. Thus $b^a = \left(b^{\ord(b)}\right)^n \cdot b^r \in P(\ord(b))$. Thus $P(\ord(b)) = M(m)$. Since $|P(\ord(b)) = \ord(b)|$, $|M(m)| = \ord(b) \implies b^{|M(m)|} = b^{\ord(b)} = 1$.
+
+		Since $|M(m)| \div \phi(m)$, $\phi(m) = |M(m)|n, n\in\Z$. Thus $b^{\phi(m)} = b^{|M(m)n|} = \left(b^{|M(m)|}\right)^n = 1$.
 		
 		%FTSOC suppose $\ord(b) < |M(m)|$. If $\ord(b) > |M(m)|
 		
 		%Next we show that $b^{|M(m)|} = 1$. First define $P(n) := \{b^a, a\in \N \bigcap [1, n]\}$. We will now show that $P(|M(m)|) = M(m)$ by showing these ``first'' $|M(m)|$ elements to be distinct (if they are, then there won't be greater $a$ because the sizes would provide a contradiction). FTSOC suppose $\exists a,c \in [1,M(m)]$ s.t. $b^a = b^c$ and $c>a$ (WLOG). Then $b^{c-a} = 1$. But now given any $b^d$, we can reduce it to $b^r, r \le c-a$ with the division algorithm: $d = n'(c-a) + r', r' \in\N \bigcap[0,c-a)$, if $r'=0$ then decrement $n'$ by 1 to get $d = (n'-1) (c-a) + c-a$ and let this be $r$ and $n = n'-1, else let $r = r'$ and $n = n'. Then $b^{n(c-a) + r} = \left(b^{c-a}\right)^n \cdot b^r = b^r$. Therefore $|M(m)| < c-a < |M(m)|$, a contradiction. Thus all the elements of $P(|M(m)|)$ are distinct. Thus 
 	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	No.
+	\begin{proof}
+	 For instance, with $m=15$, 2 is a generator in $\Z(2)$ and $\Z(4)$, but 2 isn't a generator in $M(15)$.
+	\end{proof}
+	In essence, the $\otimes$ operation isn't necessarily the same as multiplication. The $\otimes$ operation provides an isomorphic representation of $M(m)$.
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+		Let $G$ be a cyclic group and $g$ be a generator of it.
+
+		First let's consider even order. First we can establish that at least half the elements are perfect squares by claiming that $g^{2b}$ is always a perfect square: $(g^b)^2 = g^{2b}$. Then we can see that there are only $|G|/2$ even numbers up to $|G|$ (each of which correspond to a perfect square). Then we can show this to be the maximum amount. Suppose that $g^{2b+1}$ was a perfect square. Then $\exist a \in G$ s.t. $a^2 = g^{2b+1}$. Since $G$ is cyclic, $a = g^c$ for some $c$. Thus $a^2 = g^{2c} = g^{2b+1}$. But $2c$ is even while $2b+1$ is odd, thus they can't equate. Therefore there are exactly $|G|/2$ perfect squares.
+
+		Odd order: Fix an element $g^a$ of $G$. Then $(g^{a/2})^2 = g^a$ or $\left(g^{\frac{a+|G|}{2}}\right)^2$. Proof is trivial.
+	\end{proof}
+\end{exercise}
+
+\begin{exercise}
+	No
+\begin{proof}
+	
+\end{proof}
 \end{exercise}
 
 \end{document}
