@@ -157,14 +157,21 @@
 
 		First let's consider even order. First we can establish that at least half the elements are perfect squares by claiming that $g^{2b}$ is always a perfect square: $(g^b)^2 = g^{2b}$. Then we can see that there are only $|G|/2$ even numbers up to $|G|$ (each of which correspond to a perfect square). Then we can show this to be the maximum amount. Suppose that $g^{2b+1}$ was a perfect square. Then $\exist a \in G$ s.t. $a^2 = g^{2b+1}$. Since $G$ is cyclic, $a = g^c$ for some $c$. Thus $a^2 = g^{2c} = g^{2b+1}$. But $2c$ is even while $2b+1$ is odd, thus they can't equate. Therefore there are exactly $|G|/2$ perfect squares.
 
-		Odd order: Fix an element $g^a$ of $G$. Then $(g^{a/2})^2 = g^a$ or $\left(g^{\frac{a+|G|}{2}}\right)^2$. Proof is trivial.
+		Odd order: Fix an element $g^a$ of $G$. Then $(g^{a/2})^2 = g^a$ or $\left(g^{\frac{a+|G|}{2}}\right)^2$. Proof is trivial from here.
 	\end{proof}
 \end{exercise}
 
+I'm skipping this one (maybe I'll return to it in a while), cuz it seems pretty annoying.
 \begin{exercise}
-	No
+	Yes, but the group must be abelian.
 \begin{proof}
-	
+	First note that we can represent any element as a vector $[t_0, t_1, \ldots]$ as previously established. Thus note that if we square it, we have $[2t_0, 2t_1, \ldots]$.
+\end{proof}
+\end{exercise}
+
+\begin{exercise}
+\begin{proof}
+	Since $x_s \equiv a \pmod{p^s}$, $x_s^2 = a + jp^s$ for some integer $j$. Then, $x_{s+1}^2 = a + jp^s + 2x_sk + k^2p^{2s}$. Then we can just let $k \equiv \frac{-j}{2x_s} \pmod{p} \implies k = \frac{-j + pg}{2x_s}, g\in\Z$ (which exists since $x_s \ne 0 \pmod{p}$, otherwise $x_{s+1} \equiv 0 \pmod{p^{s+1}}$). Thus $x_{s+1}^2 \equiv a \pmod{p^{s+1}}$. 
 \end{proof}
 \end{exercise}
 
