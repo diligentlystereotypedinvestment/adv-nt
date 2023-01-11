@@ -173,6 +173,14 @@ I'm skipping this one (maybe I'll return to it in a while), cuz it seems pretty 
 \begin{proof}
 	Since $x_s \equiv a \pmod{p^s}$, $x_s^2 = a + jp^s$ for some integer $j$. Then, $x_{s+1}^2 = a + jp^s + 2x_sk + k^2p^{2s}$. Then we can just let $k \equiv \frac{-j}{2x_s} \pmod{p} \implies k = \frac{-j + pg}{2x_s}, g\in\Z$ (which exists since $x_s \ne 0 \pmod{p}$, otherwise $x_{s+1} \equiv 0 \pmod{p^{s+1}}$). Thus $x_{s+1}^2 \equiv a \pmod{p^{s+1}}$. 
 \end{proof}
+$x_1,x_2,x_3,x_4 = 2, 7, 57, 187$
+\end{exercise}
+
+\begin{exercise}
+	\begin{proof}
+		Since $x_s \equiv a \pmod{2^s}, x_s^2 = a + j2^s$ for some integer $j$. Then, $x_{s+1}^2 = a + j2^s + 2x_sk + k^2 2^{2s}$.
+		Then we can just let $k \equiv \frac{-j}{2x_s} \pmod{p} \implies k = \frac{-j + pg}{2x_s}, g\in\Z$ (which exists since $x_s \ne 0 \pmod{p}$, otherwise $x_{s+1} \equiv 0 \pmod{p^{s+1}}$). Thus $x_{s+1}^2 \equiv a \pmod{p^{s+1}}$. 
+	\end{proof}	
 \end{exercise}
 
 \end{document}
